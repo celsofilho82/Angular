@@ -1,0 +1,16 @@
+// Neste arquivos temos as configurações do compilador typescript
+
+// Target: Informa a versão do JS que vamos compilar
+// outDir: Informa onde o compilador deve salvar o resultado da compilação
+// include: Informa onde estão os arquivos typescript
+// noEmitOnError: Não permite a compilação caso tenhamos erro no código typescript
+{
+    "compilerOptions": {
+        "target": "es6",
+        "outDir": "app/js",
+        "noEmitOnError": true
+    },
+    "include": [
+        "app/ts/**/*"
+    ]
+}
