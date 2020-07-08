@@ -4,11 +4,13 @@
 // outDir: Informa onde o compilador deve salvar o resultado da compilação
 // include: Informa onde estão os arquivos typescript
 // noEmitOnError: Não permite a compilação caso tenhamos erro no código typescript
+// noImplicitAny: Quando não definimos o tipo da váriável o código não é compilado
 {
     "compilerOptions": {
         "target": "es6",
         "outDir": "app/js",
-        "noEmitOnError": true
+        "noEmitOnError": true,
+        "noImplicitAny": true
     },
     "include": [
         "app/ts/**/*"
