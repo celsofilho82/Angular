@@ -1,3 +1,4 @@
+// Esse é o arquivo de main da aplicação
 const controller = new NegociacaoController();
 document
     .querySelector('.form')
