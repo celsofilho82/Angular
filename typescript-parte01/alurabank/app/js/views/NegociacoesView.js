@@ -1,8 +1,4 @@
 class NegociacoesView extends View {
-    // Nesta classe teremos o template para mostrar as negociacoes para o usuário
-    // No construtor da classe recebemos como parametro o elemento do DOM
-    // Neste elemento vamos inserir o nosso template que neste caso é uma tabela
-    // O método update é responsável por fazer essa inserção no DOM que recebe um array de negociações
     template(model) {
         return `
         <table class="table table-hover table-bordered">

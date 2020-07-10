@@ -5,12 +5,15 @@
 // include: Informa onde estão os arquivos typescript
 // noEmitOnError: Não permite a compilação caso tenhamos erro no código typescript
 // noImplicitAny: Quando não definimos o tipo da váriável o código não é compilado
+// removeComments: Removendo os comentários quando o código for compilado para produção
+
 {
     "compilerOptions": {
         "target": "es6",
         "outDir": "app/js",
         "noEmitOnError": true,
-        "noImplicitAny": true
+        "noImplicitAny": true,
+        "removeComments": true
     },
     "include": [
         "app/ts/**/*"
