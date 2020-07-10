@@ -1,4 +1,4 @@
-class NegociacoesView {
+class NegociacoesView extends View<Negociacoes> {
 
     // Nesta classe teremos o template para mostrar as negociacoes para o usuário
 
@@ -6,17 +6,6 @@ class NegociacoesView {
     // Neste elemento vamos inserir o nosso template que neste caso é uma tabela
 
     // O método update é responsável por fazer essa inserção no DOM que recebe um array de negociações
-
-
-    private _elemento: Element;
-
-    constructor(seletor: string){
-        this._elemento = document.querySelector(seletor);
-    }
-
-    update(model: Negociacoes): void {
-        this._elemento.innerHTML = this.template(model);
-    }
 
     template(model: Negociacoes): string {
 
