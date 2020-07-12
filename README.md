@@ -17,7 +17,7 @@ Primeiros passos com o TypeScript, apelidado de “JavaScript melhorado” justa
 
 + [TypeScript parte 1: Evoluindo seu Javascript](typescript-parte01)
 
-+ TypeScript parte 2: Mais técnicas e boas práticas
++ [TypeScript parte 2: Mais técnicas e boas práticas](typescript-parte02)
 
 ## 2 - Conhecendo o Angular e trabalhando com Webpack
 
