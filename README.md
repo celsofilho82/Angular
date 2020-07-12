@@ -15,7 +15,7 @@ Primeiros passos com o TypeScript, apelidado de “JavaScript melhorado” justa
 
 ## Cursos 
 
-+ TypeScript parte 1: Evoluindo seu Javascript 
++ [TypeScript parte 1: Evoluindo seu Javascript](typescript-parte01)
 
 + TypeScript parte 2: Mais técnicas e boas práticas
 
