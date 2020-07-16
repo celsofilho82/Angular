@@ -4,30 +4,21 @@ export class Negociacao {
     // Definindo as propriedades da classe e os modificadores de acesso
     // Os tipos estão definidos no arquivos .tsd TypeScript definitions
 
-    private _data: Date;
-    private _quantidade: number;
-    private _valor: number;
+    // Podemos usar o readonly para definir objetos cuja a propriedade não
+    // pode receber alteração com isso, não precisamos definir os getters e setters
+
+    readonly data: Date;
+    readonly quantidade: number;
+    readonly valor: number;
 
     constructor(data: Date, quantidade: number, valor: number){
-        this._data = data;
-        this._quantidade = quantidade;
-        this._valor = valor;      
-    }
-
-    get data(){
-        return this._data;
-    }
-
-    get quantidade(){
-        return this._quantidade;
-    }
-
-    get valor(){
-        return this._valor;
+        this.data = data;
+        this.quantidade = quantidade;
+        this.valor = valor;      
     }
 
     get volume(){
-        return this._quantidade * this._valor;
+        return this.quantidade * this.valor;
     }       
 
 }

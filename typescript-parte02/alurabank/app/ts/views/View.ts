@@ -16,14 +16,23 @@ export abstract class View<T> {
     // Importamos as definições de tipo de JQuery no TypeScript e substituimos a manipulação
     // direta do DOM pelos métodos do JQuery
 
-    private _elemento: JQuery;
+    // Trabalhando com parametros opcionais no contrutor da classe usamos o simbolo "?" para
+    // definir que esse parâmetro é opcional.
 
-    constructor(seletor: string){
+    private _elemento: JQuery;
+    private _escapar: boolean;
+
+    constructor(seletor: string, escapar: boolean = false){
         this._elemento = $(seletor);
+        this._escapar = escapar
     }
 
     update(model: T){
-        this._elemento.html(this.template(model));
+        let template = this.template(model);
+        if (this._escapar) {
+            template = template.replace(/<script>[\s\S]*?<\/script>/, '');
+        }
+        this._elemento.html(template);
     }
 
     abstract template(model: T): string;

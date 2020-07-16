@@ -11,6 +11,10 @@
 // É o responsável pelo carregamento do módulo principal da aplicação. A partir desse módulo todas as 
 // suas dependências são resolvidas dinamicamente, sem a necessidade de termos que importar cada script 
 // individualmente seguindo uma ordem de importação definida.
+
+// strictNullChecks: só permite atribuir null e undefined a uma variável se ele for declarada explicitamente
+// como o tipo daquela variável.
+
 {
     "compilerOptions": {
         "target": "es6",
@@ -18,7 +22,8 @@
         "noEmitOnError": true,
         "noImplicitAny": true,
         "removeComments": true,
-        "module": "System"
+        "module": "System",
+        "strictNullChecks": true
     },
     "include": [
         "app/ts/**/*"
