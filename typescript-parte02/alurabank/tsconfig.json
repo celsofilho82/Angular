@@ -15,6 +15,8 @@
 // strictNullChecks: só permite atribuir null e undefined a uma variável se ele for declarada explicitamente
 // como o tipo daquela variável.
 
+// experimentalDecorators: Habilitando o uso de decorators
+
 {
     "compilerOptions": {
         "target": "es6",
@@ -23,7 +25,8 @@
         "noImplicitAny": true,
         "removeComments": true,
         "module": "System",
-        "strictNullChecks": true
+        "strictNullChecks": true,
+        "experimentalDecorators": true
     },
     "include": [
         "app/ts/**/*"

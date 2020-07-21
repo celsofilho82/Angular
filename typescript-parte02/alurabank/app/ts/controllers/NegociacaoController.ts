@@ -1,6 +1,7 @@
 
 import { MensagemView, NegociacoesView } from "../views/index";
 import { Negociacao, Negociacoes } from "../models/index";
+import { domInject } from "../helpers/decorators/index";
 
 export class NegociacaoController {
 
@@ -18,17 +19,20 @@ export class NegociacaoController {
     // Estamos recebendo do form a quantidade e o valor como string, precisamos fazer uma
     // parse para transformamos em valores númericos e float
 
+    @domInject('#data')
     private _inputData: JQuery;
+
+    @domInject('#quantidade')
     private _inputQuantidade: JQuery;
+
+    @domInject('#valor')
     private _inputValor: JQuery;
+           
     private _negociacoes = new Negociacoes();
     private _negociacoesView = new NegociacoesView('#negociacoesView');
     private _mensagemView = new MensagemView('#mensagemView');
 
     constructor() {
-        this._inputData = $('#data');
-        this._inputQuantidade = $('#quantidade');
-        this._inputValor = $('#valor');
         this._negociacoesView.update(this._negociacoes);
     }
 

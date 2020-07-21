@@ -2,6 +2,8 @@
 // Como os arquivos TypeScrip serão compilados para JS então, todos eles serão módulos
 // Por ser um módulo, é necessário indicar os métodos que ele exporta
 
+import { logarTempoDeExecucao } from "../helpers/decorators/index";
+
 // Exportando a classe View
 export abstract class View<T> {
     
