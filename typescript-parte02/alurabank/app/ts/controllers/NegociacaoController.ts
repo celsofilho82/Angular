@@ -1,7 +1,8 @@
 
 import { MensagemView, NegociacoesView } from "../views/index";
-import { Negociacao, Negociacoes } from "../models/index";
-import { domInject } from "../helpers/decorators/index";
+import { Negociacao, Negociacoes, NegociacaoParcial } from "../models/index";
+import { domInject, throttle} from "../helpers/decorators/index";
+import { NegociacaoService } from "../services/index";
 
 export class NegociacaoController {
 
@@ -31,6 +32,8 @@ export class NegociacaoController {
     private _negociacoes = new Negociacoes();
     private _negociacoesView = new NegociacoesView('#negociacoesView');
     private _mensagemView = new MensagemView('#mensagemView');
+
+    private _service = new NegociacaoService();
 
     constructor() {
         this._negociacoesView.update(this._negociacoes);
@@ -62,6 +65,26 @@ export class NegociacaoController {
             console.log(negociacao.quantidade);
             console.log(negociacao.valor);
         });
+    }
+
+    @throttle(500)
+    importaDados(){
+        function isOK(res: Response) {
+
+            if(res.ok) {
+                return res;
+            } else {
+                throw new Error(res.statusText);
+            }
+        }
+
+        this._service
+        .obterNegociacoes(isOK)
+        .then(negociacoes => {
+            negociacoes.forEach(negociacao => 
+                this._negociacoes.adiciona(negociacao));
+            this._negociacoesView.update(this._negociacoes);
+        })      
     }
 
 }
