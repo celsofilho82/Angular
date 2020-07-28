@@ -3,6 +3,7 @@ import { MensagemView, NegociacoesView } from "../views/index";
 import { Negociacao, Negociacoes, NegociacaoParcial } from "../models/index";
 import { domInject, throttle} from "../helpers/decorators/index";
 import { NegociacaoService } from "../services/index";
+import { imprime } from '../helpers/index';
 
 export class NegociacaoController {
 
@@ -59,6 +60,7 @@ export class NegociacaoController {
         this._negociacoes.adiciona(negociacao);
         this._negociacoesView.update(this._negociacoes);
         this._mensagemView.update("Negociação Adicionada com sucesso!!!");
+        imprime(negociacao, this._negociacoes);
 
         this._negociacoes.paraArray().forEach(negociacao => {
             console.log(negociacao.data);
@@ -67,24 +69,37 @@ export class NegociacaoController {
         });
     }
 
-    @throttle(500)
-    importaDados(){
-        function isOK(res: Response) {
+    @throttle()
+    async importaDados() {
 
-            if(res.ok) {
-                return res;
-            } else {
-                throw new Error(res.statusText);
-            }
-        }
+        try {
 
-        this._service
-        .obterNegociacoes(isOK)
-        .then(negociacoes => {
-            negociacoes.forEach(negociacao => 
+           // usou await antes da chamada de this.service.obterNegociacoes()
+
+            const negociacoesParaImportar = await this._service
+                .obterNegociacoes(res => {
+
+                    if(res.ok) {
+                        return res;
+                    } else {
+                        throw new Error(res.statusText);
+                    }
+                });
+
+            const negociacoesJaImportadas = this._negociacoes.paraArray();
+
+            negociacoesParaImportar
+                .filter(negociacao => 
+                    !negociacoesJaImportadas.some(jaImportada => 
+                        negociacao.ehIgual(jaImportada)))
+                .forEach(negociacao => 
                 this._negociacoes.adiciona(negociacao));
+
             this._negociacoesView.update(this._negociacoes);
-        })      
+
+        } catch(err) {
+            this._mensagemView.update(err.message);
+        }
     }
 
 }
