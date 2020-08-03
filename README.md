@@ -25,7 +25,7 @@ Familiarizando-se com o framework Angular e conhecendo o Webpack, um empacotador
 
 ## Cursos
 
-+ Webpack: Manipulando módulos na sua webapp
++ [Webpack: Manipulando módulos na sua webapp](webpack)
 
 + Angular parte 1: Fundamentos
 
