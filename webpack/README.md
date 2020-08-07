@@ -96,8 +96,8 @@
         Download do projeto final
         Entendendo o que fizemos
 
-<!-- # Certificado de conclusão
+# Certificado de conclusão
 
-https://cursos.alura.com.br/certificate/542a45d4-95ed-4482-b677-97bb73731cb5
+https://cursos.alura.com.br/certificate/79f3c6d7-e150-4184-ae5a-8ee59335caf8
 
-![certificado](certificate-alura.png) -->
+![certificado](certificate-alura.png)
