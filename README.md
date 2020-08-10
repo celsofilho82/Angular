@@ -27,7 +27,7 @@ Familiarizando-se com o framework Angular e conhecendo o Webpack, um empacotador
 
 + [Webpack: Manipulando módulos na sua webapp](webpack)
 
-+ Angular parte 1: Fundamentos
++ [Angular parte 1: Fundamentos](angular-parte01)
 
 + Angular parte 2: Autenticação, Forms e lazy loading
 
