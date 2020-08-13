@@ -7,6 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'alurapic';
-  description = 'Leão';
-  url = 'https://upload.wikimedia.org/wikipedia/commons/5/5a/Sultan_the_Barbary_Lion.jpg';
+
+  photos = [
+    {
+      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Sultan_the_Barbary_Lion.jpg/412px-Sultan_the_Barbary_Lion.jpg", 
+      description: "Leão"
+    },
+    {
+      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Lion_waiting_in_Namibia.jpg/640px-Lion_waiting_in_Namibia.jpg", 
+      description: "Leoa"
+    }
+  ]
 }
