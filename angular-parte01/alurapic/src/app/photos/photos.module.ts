@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { PhotoComponent } from "./photo/photo.component";
 import { PhotoListComponent } from './photo-list/photo-list.component';
 import { PhotoFormComponent } from './photo-form/photo-form.component';
+import { PhotosComponent } from './photo-list/photos/photos.component';
 
 // Uma boa prática é toda vez que criarmos um módulo já importar o CommonModule
 // para estar disponível as diretivas do Angular
@@ -13,7 +14,8 @@ import { PhotoFormComponent } from './photo-form/photo-form.component';
     declarations: [
         PhotoComponent, 
         PhotoListComponent, 
-        PhotoFormComponent
+        PhotoFormComponent, 
+        PhotosComponent
     ],
     imports: [
         HttpClientModule,

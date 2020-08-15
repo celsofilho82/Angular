@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { PhotoService } from '../photo/photo.service';
 import { ActivatedRoute } from '@angular/router';
+
+import { PhotoService } from '../photo/photo.service';
+import { Photo } from '../photo/photo';
 
 @Component({
   selector: 'app-photo-list',
@@ -9,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PhotoListComponent implements OnInit {
 
-  photos: Object[] = [];
+  photos: Photo[] = [];
 
    // Esse construtor somente é utilizado para injeção de dependência
    constructor(
