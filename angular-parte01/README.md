@@ -109,8 +109,8 @@
         Consolidando seu conhecimento
         Projeto completo
 
-<!-- # Certificado de conclusão
+# Certificado de conclusão
 
-https://cursos.alura.com.br/certificate/79f3c6d7-e150-4184-ae5a-8ee59335caf8
+https://cursos.alura.com.br/certificate/cdfbd300-39a0-494e-a742-55831210cde6
 
-![certificado](certificate-alura.png) -->
+![certificado](certificate-alura.png)
